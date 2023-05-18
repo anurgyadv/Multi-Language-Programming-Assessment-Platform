@@ -1,6 +1,6 @@
 import socket
 
-QB_HOST = '192.168.0.100'  # Replace with the QB's IP address
+QB_HOST = '49.196.20.0'  # Replace with the QB's IP address
 QB_PORT = 5000
 
 def send_message(sock, message):
