@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Programming Language Assessment System</title>
+  <!-- CSS styles and JavaScript files -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div id="login-container" class="container">
+    <h1>Login</h1>
+    <form id="login-form" onsubmit="authenticate(event)">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  
+  <div id="main-container" class="container" style="display: none;">
+    <h1>Test</h1>
+    <div id="question-container">
+      <p id="question-text">Question or Challenge Text</p>
+      <!-- Display options for multi-choice questions -->
+      <div id="options-container">
+        <input type="radio" name="option" value="1"> Option 1<br>
+        <input type="radio" name="option" value="2"> Option 2<br>
+        <!-- Add more options as needed -->
+      </div>
+      <!-- Display text area for programming challenges -->
+      <textarea id="code-area" rows="10" cols="50"></textarea>
+      <button id="submit-button" onclick="submitAnswer()">Submit</button>
+    </div>
+  
+    <!-- Rest of the content -->
+    
+    <button id="logout-button" onclick="logout()">Logout</button>
+  </div>
+  
+  <script>
+    function authenticate(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get input values
+      var username = document.forms["login-form"]["username"].value;
+      var password = document.forms["login-form"]["password"].value;
+      
+      // Check if credentials are valid
+      if (username === "admin" && password === "admin") {
+        // Successful login, show the main content
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("main-container").style.display = "block";
+      } else {
+        // Invalid credentials, show an error message
+        alert("Invalid username or password");
+      }
+    }
+    
+    function logout() {
+      document.getElementById("login-container").style.display = "block";
+      document.getElementById("main-container").style.display = "none";
+    }
+  </script>
+</body>
+</html>
