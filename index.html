@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Programming Language Assessment System</title>
+  <!-- CSS styles and JavaScript files -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <div class="container">
+    <h1>Test</h1>
+    <div id="question-container">
+      <p id="question-text">Question or Challenge Text</p>
+      <!-- Display options for multi-choice questions -->
+      <div id="options-container">
+        <input type="radio" name="option" value="1"> Option 1<br>
+        <input type="radio" name="option" value="2"> Option 2<br>
+        <!-- Add more options as needed -->
+      </div>
+      <!-- Display text area for programming challenges -->
+      <textarea id="code-area" rows="10" cols="50"></textarea>
+      <button id="submit-button" onclick="submitAnswer()">Submit</button>
+    </div>
+  </div>
+  <div class="container">
+    <h1>Feedback</h1>
+    <div id="feedback-container">
+      <p id="feedback-text">Feedback Text</p>
+      <button id="next-button" onclick="loadNextQuestion()">Next</button>
+    </div>
+  </div>
+  <div class="container">
+    <h1>Progress and Marks</h1>
+    <div id="progress-container">
+      <p id="progress-text">Progress Text</p>
+      <p id="marks-text">Marks Text</p>
+      <button id="performance-button">View Overall Performance</button>
+      <button id="question-marks-button">View Question Marks</button>
+    </div>
+  </div>
+  <div class="container">
+    <button id="logout-button">Logout</button>
+  </div>
+</body>
+</html>
